@@ -1,0 +1,20 @@
+1. Checkout from git fetch && git checkout darsan1@bitbucket.org/tsatcloud/tsat-cloud-react.git
+ The base/root folder(tsat) will be referred as <project_home> henceforth.
+2. cd <project_home>/src/main/script
+3. npm install
+4. npm start 
+ If you are getting missing package errors, open package.json file and make sure you have installed all the dependencies  mentioned there. For example if you do not have material-ui package, please run the command npm install material-ui
+4. make sure you run npm start command successfully
+5. npm run-script build
+6. Once successfully completed, copy the contents of the build directory to  <project_home>/src/main/resources/static folder 
+7.
+8. Make sure you have Apache Maven installed and and it is in your path. ( verify successful installation by mvn —version). Install jdk 1.8  and add to PATH
+9. cd  <project_home>  
+10. Edit src/main/resources/application.properties file and make necessary changes for the following three attributes to point to your local TSAT db
+ database.url=jdbc:mysql://localhost:3306/tsat
+ database.user=root
+ database.password=root
+9. mvn clean install
+10. mvn spring-boot:run. Make sure that the tomcat application server is up and running on port 8080  from the console logs
+11. Open your browser and point to http://lovalhost:8080/codedefinitions. You should be able to see all the code definitions returned by Rest API in the browser
+12. use url http://lovalhost:8080 to see the react UI.
